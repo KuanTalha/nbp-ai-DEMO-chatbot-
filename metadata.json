@@ -1,0 +1,7 @@
+{
+  "name": "NBP AI - RAG Knowledge Assistant",
+  "description": "A clean, functional RAG-based AI chatbot answering questions from National Bank of Pakistan (NBP) public company knowledge with citations, vector search, document/website ingestion, and dual-stack architecture.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

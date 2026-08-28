@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply bg-[#f0f2f5] text-[#1a1a1a] font-sans antialiased transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-[#000000] text-neutral-100;
+  }
+}
+
+.font-urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', Tahoma, sans-serif;
+  line-height: 1.8;
+}
+
+/* Markdown styling inside chat messages */
+.markdown-body {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: #1f2937;
+}
+
+.dark .markdown-body {
+  color: #e5e5e5;
+}
+
+.markdown-body p {
+  margin-bottom: 0.75rem;
+}
+
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.dark .markdown-body strong {
+  color: #ffffff;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #004d39;
+}
+
+.dark .markdown-body h1, .dark .markdown-body h2, .dark .markdown-body h3, .dark .markdown-body h4 {
+  color: #34d399;
+}
+
+.markdown-body h1 { font-size: 1.25rem; }
+.markdown-body h2 { font-size: 1.125rem; }
+.markdown-body h3 { font-size: 1rem; }
+
+.markdown-body code {
+  background-color: #e6f4ea;
+  color: #004d39;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.dark .markdown-body code {
+  background-color: #142a20;
+  color: #4ade80;
+}
+
+.markdown-body pre {
+  background-color: #003829;
+  color: #e0f2f1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+  border: 1px solid #004d39;
+}
+
+.dark .markdown-body pre {
+  background-color: #0d0d0d;
+  border-color: #262626;
+  color: #e5e5e5;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  font-weight: 400;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.markdown-body th, .markdown-body td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.dark .markdown-body th, .dark .markdown-body td {
+  border-color: #262626;
+}
+
+.markdown-body th {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.dark .markdown-body th {
+  background-color: #171717;
+  color: #f5f5f5;
+}
+
+.markdown-body blockquote {
+  border-left: 3.5px solid #006a4e;
+  padding-left: 0.85rem;
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+  background-color: #f8fbf9;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.dark .markdown-body blockquote {
+  border-left-color: #10b981;
+  background-color: #142a2080;
+  color: #d4d4d4;
+}

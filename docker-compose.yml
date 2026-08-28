@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant_rag
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: fastapi_rag_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_PROVIDER=gemini
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - QDRANT_URL=http://qdrant:6333
+      - QDRANT_COLLECTION=company_knowledge
+      - CHUNK_SIZE=1000
+      - CHUNK_OVERLAP=150
+      - TOP_K=5
+      - SIMILARITY_THRESHOLD=0.35
+    depends_on:
+      - qdrant
+    volumes:
+      - ./backend/data:/app/data
+    restart: unless-stopped
+
+volumes:
+  qdrant_storage:
